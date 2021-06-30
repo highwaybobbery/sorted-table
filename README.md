@@ -6,7 +6,7 @@ Ruby 3.0.1
 Rails 6.1.4
 Rspec 3.10
 
-(there is no databse or caching technology used)
+(there is no database or caching technology used)
 
 ## Setup
 1) Clone this repo
