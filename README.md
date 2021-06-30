@@ -1,10 +1,10 @@
 # This is a simple ROR app to allow users to view and sort delimited files
 
 ## Stack
-Bundler 2.2
-Ruby 3.0.1
-Rails 6.1.4
-Rspec 3.10
+* Bundler 2.2
+* Ruby 3.0.1
+* Rails 6.1.4
+* Rspec 3.10
 
 (there is no database or caching technology used)
 
