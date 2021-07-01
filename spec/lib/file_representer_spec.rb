@@ -12,7 +12,7 @@ describe FileRepresenter do
 
   describe '#header' do
     it 'returns the correct headers' do
-      expect(subject.headers).to eq described_class.headers
+      expect(subject.header).to eq described_class::HEADER
     end
   end
 

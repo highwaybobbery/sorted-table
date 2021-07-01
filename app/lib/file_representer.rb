@@ -1,6 +1,10 @@
 class FileRepresenter
   HEADER = [
-    'Full name', 'Email', 'Vehicle type', 'Vehicle name', 'Vehicle length'
+    { label: 'Full name', sortable: true },
+    { label: 'Email', sortable: false },
+    { label: 'Vehicle type', sortable: true },
+    { label: 'Vehicle name', sortable: false },
+    { label: 'Vehicle length', sortable: false },
   ]
 
   def initialize(rows)

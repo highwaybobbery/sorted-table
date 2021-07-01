@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .sort-table {
   th {
-    cursor: pointer;
     padding: 5px 25px 5px 5px;
     span.arrow {
       display: inline-block;
@@ -11,6 +10,13 @@
       height: 16px;
       width: 16px;
       overflow: hidden;
+    }
+
+    &.sortable {
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
   td { padding: 3px 25px 2px 5px; }

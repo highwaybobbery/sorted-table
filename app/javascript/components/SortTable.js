@@ -54,14 +54,25 @@ class SortTable extends Component {
                 <thead>
                     <tr>
                     {this.props.header.map((header, index) => {
+                        if (header.sortable === true) {
                             let sortArrow = '';
                             if (index === this.state.sortColumnIndex) {
-                              sortArrow = this.SORT_DIRECTIONS[this.state.sortDirection].arrowCode
+                                sortArrow = this.SORT_DIRECTIONS[this.state.sortDirection].arrowCode
                             }
-                            return <th key={index} onClick={(e) => this.handleSort(index)}>
-                                {header} <span className={'arrow'}>{sortArrow}</span></th>
+                            return (
+                                <th key={index} className={'sortable'} onClick={() => this.handleSort(index)} >
+                                    {header.label} <span className={'arrow'}>{sortArrow}</span>
+                                </th>
+                            )
+                        } else {
+                            return (
+                                <th key={index} className={'no-sort'}>
+                                    {header.label} <span className={'arrow'}></span>
+                                </th>
+                            )
+
                         }
-                    )}
+                    })}
                     </tr>
                 </thead>
                 <tbody>
