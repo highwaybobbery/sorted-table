@@ -5,6 +5,8 @@
 * Ruby 3.0.1
 * Rails 6.1.4
 * Rspec 3.10
+* Node 14.17.1
+* Yarn
 
 (there is no database or caching technology used)
 
@@ -13,6 +15,8 @@
 1) Within root directory of the application:
     1) Ensure you have ruby 3.0.1 installed and activated `ruby -v`
     1) Ensure bundler is intalled with a recent version `gem install bundler -v '>=2.2`)
+    1) Ensure Node 14.17.1 is installed `nvm install 14.17.1`
+    1) Ensure Yarn is installed `npm install --global yarn`
     1) Install required gems with `bundle install`
    
 ## Testing
