@@ -7,7 +7,8 @@ class FileParser
 
   def rows
     @rows ||= raw_lines.map do |line|
-      line.split(delimiter)
+      # TODO: the controller should probably be detecting and enforcing the encoding
+      line.force_encoding('utf-8').split(delimiter)
     end
   end
 
