@@ -22,27 +22,27 @@ describe UploadsController do
     let(:file) {
       Rack::Test::UploadedFile.new("#{Rails.root}/spec/support/attachments/#{filename}", 'text')
     }
+    let(:output_rows) {
+      [
+        ['i am', 'a very good', 'tester'],
+        ['when i am', 'not too', 'sleepy']
+      ]
+    }
+
+    let(:header) {
+      ['good', 'dogs', 'get', 'naps']
+    }
 
     it 'ingests the posted file with FileParser' do
-      expect(ActionDispatch::Http::UploadedFile).
-        to receive(:new).and_return(file)
-
-      expect(FileParser).to receive(:new).with(file).and_call_original
+      expect(FileParser).to receive(:new).with(instance_of(Tempfile)).and_call_original
       post :create, params: { upload_file: file }
     end
 
-    context 'view rendering' do
-      render_views
+    it 'passes the rows to the FileRepresenter' do
+      allow_any_instance_of(FileParser).to receive(:rows).and_return output_rows
+      expect(FileRepresenter).to receive(:new).with(output_rows).and_call_original
 
-      it 'renders the show view' do
-        post :create, params: { upload_file: file }
-        expect( response.body).to match /<h1>Here is your file!/im
-      end
-
-      it 'shows the correct data in the table' do
-        post :create, params: { upload_file: file }
-        expect( response.body).to match /<td>Ansel Adams<\/td>/
-      end
+      post :create, params: { upload_file: file }
     end
   end
 end
