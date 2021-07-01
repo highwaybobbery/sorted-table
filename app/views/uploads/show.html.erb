@@ -1,0 +1,17 @@
+<h1>Here is your file!</h1>
+<table>
+  <tr>
+  <% @file_representer.header.each do |heading| %>
+    <th><%= heading %></td>
+  <% end %>
+  </tr>
+  <% @file_representer.rows.each do |row| %>
+  <tr>
+  <% row.each do |cell| %>
+    <td><%= cell %></td>
+  <% end %>
+  </tr>
+  <% end %>
+</table>
+<br/>
+<%= link_to 'Upload a new file', new_upload_url %>

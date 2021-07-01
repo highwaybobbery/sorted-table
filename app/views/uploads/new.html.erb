@@ -1,0 +1,9 @@
+<h1>Welcome to the delimited file viewer</h1>
+<h2>Please select a file from your local system to view.</h2>
+<p>We will take care of it from there!</p>
+<%= form_with url: "/uploads", multipart: true do |form| %>
+  <%= form.file_field :upload_file %>
+  <p>
+  <%= form.submit "Upload" %>
+  </p>
+<% end %>
