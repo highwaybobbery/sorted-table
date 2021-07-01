@@ -1,3 +1,21 @@
 // Place all the styles related to the uploads controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.sort-table {
+  th {
+    cursor: pointer;
+    padding: 5px 25px 5px 5px;
+    span.arrow {
+      display: inline-block;
+      font-size: 14px;
+      height: 16px;
+      width: 16px;
+      overflow: hidden;
+    }
+  }
+  td { padding: 3px 25px 2px 5px; }
+  th {
+    border: 1px solid grey;
+    text-align: left;
+  }
+}
